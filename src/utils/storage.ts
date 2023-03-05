@@ -14,14 +14,18 @@ export async function storeDiscordTokens(
 
 export async function getDiscordTokens(
     userId: string
-): Promise<RESTPostOAuth2AccessTokenResult> {
+): Promise<RESTPostOAuth2AccessTokenResult | null> {
     await ensureDirectoryExists();
 
-    return JSON.parse(
-        await readFile(join(directory, `${userId}.json`), {
-            encoding: "utf-8",
-        })
-    );
+    try {
+        return JSON.parse(
+            await readFile(join(directory, `${userId}.json`), {
+                encoding: "utf-8",
+            })
+        );
+    } catch {
+        return null;
+    }
 }
 
 async function ensureDirectoryExists() {

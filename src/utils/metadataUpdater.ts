@@ -11,6 +11,10 @@ export default async function (userId: string) {
     // Fetch the Discord tokens from storage
     const tokens = await storage.getDiscordTokens(userId);
 
+    if (!tokens) {
+        return;
+    }
+
     let metadata: RoleConnectionMetadata | Record<string, string | number> = {};
 
     try {
