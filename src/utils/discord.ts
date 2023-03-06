@@ -1,6 +1,7 @@
 import { randomUUID } from "crypto";
 import {
     OAuth2Routes,
+    OAuth2Scopes,
     RESTGetAPIOAuth2CurrentAuthorizationResult,
     RESTOAuth2AuthorizationQuery,
     RESTPostOAuth2AccessTokenResult,
@@ -27,7 +28,9 @@ export function getOAuthURL() {
         redirect_uri: process.env.DISCORD_REDIRECT_URI,
         response_type: "code",
         state: state,
-        scope: "role_connections.write identify",
+        scope: [OAuth2Scopes.RoleConnectionsWrite, OAuth2Scopes.Identify].join(
+            " "
+        ),
         prompt: "consent",
     };
 
