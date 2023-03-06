@@ -19,20 +19,19 @@ const body: RESTPutAPIApplicationRoleConnectionMetadataJSONBody = [
     {
         name: "Rank",
         key: "rank",
-        description:
-            "The rank of this player in the droid performance points leaderboard",
+        description: "The player's minimum rank",
         type: ApplicationRoleConnectionMetadataType.IntegerLessThanOrEqual,
     },
     {
         name: "Performance Points",
         key: "pp",
-        description: "The performance points of this player",
+        description: "The player's minimum performance points",
         type: ApplicationRoleConnectionMetadataType.IntegerGreaterThanOrEqual,
     },
     {
         name: "Play Count",
         key: "playcount",
-        description: "The amount of times this player has played",
+        description: "The minimum amount of times the player has played",
         type: ApplicationRoleConnectionMetadataType.IntegerGreaterThanOrEqual,
     },
 ];
