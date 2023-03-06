@@ -15,13 +15,12 @@ router.post<never, unknown, { userId: string; key: string }>(
             return res.sendStatus(403);
         }
 
+        // Send status now, the bot should not need to wait for the request to finish.
+        res.sendStatus(200);
+
         try {
             await updateMetadata(req.body.userId);
-
-            res.sendStatus(204);
-        } catch {
-            res.sendStatus(500);
-        }
+        } catch {}
     }
 );
 
