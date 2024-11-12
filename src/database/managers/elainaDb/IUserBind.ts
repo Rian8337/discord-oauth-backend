@@ -1,19 +1,14 @@
 /**
- * Represents a Discord user who has at least one osu!droid account binded.
+ * Represents a Discord user who has an osu!droid account binded.
  */
 export interface IUserBind {
     /**
      * The Discord ID of the user.
      */
-    discordid: string;
+    readonly discordid: string;
 
     /**
-     * The total droid performance points (dpp) that the user has.
+     * The ID of the osu!droid account binded to the user.
      */
-    pptotal: number;
-
-    /**
-     * The play count of the user (how many scores the user have submitted into the dpp system).
-     */
-    playc: number;
+    readonly uid: number;
 }
