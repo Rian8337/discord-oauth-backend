@@ -41,17 +41,17 @@ namespace NodeJS {
         readonly OFFICIAL_DB_HOSTNAME?: string;
 
         /**
-         * The port of the database for the official server.
+         * The username of the database for the official server.
          */
         readonly OFFICIAL_DB_USERNAME?: string;
 
         /**
-         * The username of the database for the official server.
+         * The password of the database for the official server.
          */
         readonly OFFICIAL_DB_PASSWORD?: string;
 
         /**
-         * The password of the database for the official server.
+         * The name of the database for the official server.
          */
         readonly OFFICIAL_DB_NAME?: string;
 
