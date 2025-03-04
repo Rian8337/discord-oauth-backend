@@ -68,7 +68,7 @@ export default async function (userId: string) {
         }
 
         metadata = {
-            pp: player.pp,
+            pp: Math.round(player.pp),
             playcount: player.playcount,
             rank: rank,
         };
