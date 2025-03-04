@@ -1,4 +1,7 @@
+import { config } from "dotenv";
 import { createPool } from "mysql2/promise";
+
+config();
 
 /**
  * The official database connection pool.
