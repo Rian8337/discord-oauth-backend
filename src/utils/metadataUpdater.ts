@@ -38,7 +38,10 @@ export default async function (userId: string) {
                 [bindInfo.uid]
             )
             .then((res) => res.at(0)?.at(0) as OfficialDatabaseUser)
-            .catch(() => null);
+            .catch((e: unknown) => {
+                console.error(e);
+                return null;
+            });
 
         if (!player) {
             return;
@@ -55,7 +58,10 @@ export default async function (userId: string) {
                         "COUNT(*) + 1"
                     ] ?? null
             )
-            .catch(() => null);
+            .catch((e: unknown) => {
+                console.error(e);
+                return null;
+            });
 
         if (rank === null) {
             return;
